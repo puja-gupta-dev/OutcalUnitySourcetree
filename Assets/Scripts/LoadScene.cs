@@ -9,8 +9,8 @@ public class LoadScene : MonoBehaviour
     [SerializeField]
     Button _button1,_button2,_button3;
 
-    [SerializeField]
-    string _sceneName = "scene";
+    
+    public  string _sceneName = "scene";
 
     // Start is called before the first frame update
     void Start()
