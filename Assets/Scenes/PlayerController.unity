@@ -212,8 +212,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454907348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.435, y: 0.21, z: 0}
-  m_LocalScale: {x: 4.83791, y: 1, z: 1}
+  m_LocalPosition: {x: -0.009, y: 0.21, z: 0}
+  m_LocalScale: {x: 9.479786, y: 1.7765, z: 1.7765}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -300,75 +300,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &967814769
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 967814770}
-  - component: {fileID: 967814771}
-  m_Layer: 0
-  m_Name: CrouchCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &967814770
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967814769}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1057049202}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &967814771
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967814769}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.1076799, y: 0.605699}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2153598, y: 1.5114802}
-  m_EdgeRadius: 0
---- !u!61 &1057049199 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 2776804035468704160, guid: 9022c8871ec384211b91582056598cdf,
-    type: 3}
-  m_PrefabInstance: {fileID: 2776804035468704156}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1057049202 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6261933811807310517, guid: 9022c8871ec384211b91582056598cdf,
-    type: 3}
-  m_PrefabInstance: {fileID: 2776804035468704156}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2776804035468704156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -436,15 +367,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2776804035468704159, guid: 9022c8871ec384211b91582056598cdf,
-        type: 3}
-      propertyPath: _colliderCrouch
-      value: 
-      objectReference: {fileID: 967814771}
-    - target: {fileID: 2776804035468704159, guid: 9022c8871ec384211b91582056598cdf,
-        type: 3}
-      propertyPath: _colliderNor
-      value: 
-      objectReference: {fileID: 1057049199}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9022c8871ec384211b91582056598cdf, type: 3}

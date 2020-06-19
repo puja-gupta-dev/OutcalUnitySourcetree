@@ -6,47 +6,37 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
-
-        private Animator _animator;
+        [SerializeField]
+        private float speedHorizontal = 4f;
 
         [SerializeField]
-        private BoxCollider2D _colliderCrouch;
+        private float upwardForce = 4f;
+
+        private Animator animator;
+        private Rigidbody2D rigidBody2D;
+
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
-            _animator = GetComponent<Animator>();
+            animator = GetComponent<Animator>();
+            rigidBody2D = GetComponent<Rigidbody2D>();
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-            float speedVer = Input.GetAxisRaw("Vertical");
             float speed = Input.GetAxisRaw("Horizontal");
+            float speedJump = Input.GetAxisRaw("Jump");
 
-            PlayerMovement(speed, speedVer);
-            PlayCrouchAnimation();
+            PlayerMovement(speed,speedJump);
+            TranslatePlayer(speed, speedJump);
         }
 
-        private void PlayCrouchAnimation()
-        {
-            if (Input.GetKeyDown(KeyCode.LeftControl))
-            {
-                _animator.SetBool("isCrouch", true);
-                _colliderCrouch.gameObject.SetActive(true);
-                gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            }
-            else if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _animator.SetBool("isCrouch", false);
-                _colliderCrouch.gameObject.SetActive(false);
-                gameObject.GetComponent<BoxCollider2D>().enabled = true;
-            }
-        }
+       
 
-        void PlayerMovement(float horizontal,float vertical)
+        private void PlayerMovement(float horizontal,float vertical)
         {
-           
-         _animator.SetFloat("speed", Mathf.Abs(horizontal));
+            animator.SetFloat("speed", Mathf.Abs(horizontal));
             Vector3 scale = transform.localScale;
             if (horizontal < 0)
             {
@@ -60,9 +50,26 @@ namespace Player
             }
 
 
-            if (vertical > 0)
-                _animator.SetFloat("speedVer", vertical);
+            if(vertical > 0)
+            {
+                animator.SetBool("canJump", true);  
+            }
+            else 
+            {
+                animator.SetBool("canJump", false);   
+            } 
 
+        }
+
+        private void TranslatePlayer(float horizontal,float vertical)
+        {
+            Vector3 pos = transform.position;
+            pos.x += horizontal * speedHorizontal * Time.deltaTime;
+
+            transform.position = pos;
+
+            if(vertical>0)
+                rigidBody2D.AddForce(Vector2.up * upwardForce, ForceMode2D.Force);
         }
     }
 }
