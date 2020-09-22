@@ -1,24 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class LoadMasterScene : MonoBehaviour
+namespace player
 {
-    [SerializeField]
-    Button _button;
-
-    [SerializeField]
-    string _sceneName;
-
-    private void Start()
+    public class LoadMasterScene : MonoBehaviour
     {
-        _button.onClick.AddListener(() => OnBackButtonClick());
-    }
+        public string _sceneName = "MainScene";
 
-    void OnBackButtonClick()
-    {
-        SceneManager.LoadScene(_sceneName);
+        [SerializeField]
+        Button _button1;
+        // Start is called before the first frame update
+        void Start()
+        {
+            _button1.onClick.AddListener(() => OnBackButtonClick());
+        }
+
+        void OnBackButtonClick()
+        {
+             SceneManager.LoadScene(_sceneName);
+        }
+        
     }
 }
